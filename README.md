@@ -33,6 +33,6 @@ jupyter notebook mcmc.ipynb
 
 5. Output and chain files are written to `stats/chains/Flare/` (see filename root `poly_deg{n}`).
 
-## 💡 Tips
+## Note
 - If you only want to view previously computed results, skip the Cobaya sampling cells and run the plotting cells that read from `stats/chains/Flare/`.
 - Use `Burn_In` and `Max_Samples` settings in the notebook to control sampling and plotting behavior.
