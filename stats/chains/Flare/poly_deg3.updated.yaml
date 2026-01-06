@@ -1,0 +1,92 @@
+theory:
+  likelihood.FlareTheory:
+    tvals: true
+    speed: -1
+    stop_at_error: false
+    version: null
+    python_path: ./
+    input_params:
+    - A
+    - tau
+    - omega
+    - C
+    output_params: []
+likelihood:
+  likelihood.ErrorLikelihood:
+    data: true
+    eps: 0.001
+    type: []
+    speed: -1
+    stop_at_error: false
+    version: null
+    python_path: ./
+    input_params: []
+    output_params: []
+params:
+  A:
+    ref: 0.5
+    prior:
+      min: 0
+      max: 2
+    proposal: 0.2
+    latex: A
+  tau:
+    ref: 5
+    prior:
+      min: 1
+      max: 10
+    proposal: 0.1
+    latex: \tau
+  omega:
+    ref: 10
+    prior:
+      min: 1
+      max: 20
+    proposal: 0.1
+    latex: \omega
+  C:
+    ref: 300
+    prior:
+      min: 1
+      max: 500
+    proposal: 1
+    latex: C
+sampler:
+  mcmc:
+    burn_in: 0
+    max_tries: 10000
+    covmat: null
+    covmat_params: null
+    proposal_scale: 2.4
+    output_every: 60s
+    learn_every: 40d
+    temperature: 1
+    learn_proposal: true
+    learn_proposal_Rminus1_max: 2.0
+    learn_proposal_Rminus1_max_early: 30.0
+    learn_proposal_Rminus1_min: 0.0
+    max_samples: 100000
+    Rminus1_stop: 0.01
+    Rminus1_cl_stop: 0.05
+    Rminus1_cl_level: 0.99
+    Rminus1_single_split: 4
+    measure_speeds: true
+    oversample_power: 0.4
+    oversample_thin: true
+    drag: false
+    blocking:
+    - - 1
+      - - A
+        - tau
+        - omega
+        - C
+    callback_function: null
+    callback_every: null
+    seed: null
+    check_every: null
+    oversample: null
+    drag_limits: null
+    fallback_covmat_scale: 4
+    version: 3.5.7
+output: poly_deg3
+version: 3.5.7

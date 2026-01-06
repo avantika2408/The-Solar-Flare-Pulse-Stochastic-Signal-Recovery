@@ -1,0 +1,49 @@
+theory:
+  likelihood.FlareTheory:
+    python_path: ./
+    tvals: true
+likelihood:
+  likelihood.ErrorLikelihood:
+    python_path: ./
+    data: true
+params:
+  A:
+    ref: 0.5
+    prior:
+      min: 0
+      max: 2
+    proposal: 0.2
+    latex: A
+  tau:
+    ref: 5
+    prior:
+      min: 1
+      max: 10
+    proposal: 0.1
+    latex: \tau
+  omega:
+    ref: 10
+    prior:
+      min: 1
+      max: 20
+    proposal: 0.1
+    latex: \omega
+  C:
+    ref: 300
+    prior:
+      min: 1
+      max: 500
+    proposal: 1
+    latex: C
+sampler:
+  mcmc:
+    learn_proposal: true
+    Rminus1_single_split: 4
+    measure_speeds: true
+    max_samples: 100000
+    max_tries: 10000
+    Rminus1_stop: 0.01
+    Rminus1_cl_stop: 0.05
+    Rminus1_cl_level: 0.99
+    burn_in: 0
+output: poly_deg3
