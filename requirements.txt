@@ -1,0 +1,11 @@
+numpy
+scipy
+pandas
+matplotlib
+cobaya
+getdist
+ipywidgets
+jupyter
+notebook
+ipykernel
+pyyaml
